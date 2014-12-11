@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+source 'https://rails-assets.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
@@ -42,3 +42,4 @@ gem 'stomp'
 gem 'memoist'
 gem 'hash_mapper'
 gem 'dotenv-rails'
+gem 'rails-assets-normalize.css'

@@ -1,13 +1,22 @@
-<% @snapshot.operator_performance.each do |p| %>
-  <h4><%= p.operator %></h4>
-  <dl>
-    <dt>Total trains</dt>
-    <dd><%= p.total %></dd>
-    <dt>On time</dt>
-    <dd><%= p.on_time %></dd>
-    <dt>Late </dt>
-    <dd><%= p.late %></dd>
-    <dt>Cancelled</dt>
-    <dd><%= p.cancelled %></dd>
-  </dl>
-<% end %>
+<h1>Network Rail Train Performance</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rank</th>
+      <th>Operator</th>
+      <th>Trains arriving on-time</th>
+      <th>Total trains over period</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @snapshot.operator_performance.sort_by{|op| -op.on_time_proportion}.each_with_index do |p, i| %>
+    <tr>
+      <td><%= i + 1 %></td>
+      <td><%= p.operator %></td>
+      <td><%= number_to_percentage(p.on_time_proportion * 100, precision: 0) %></td>
+      <td><%= p.total %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
