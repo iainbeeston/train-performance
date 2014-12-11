@@ -1,0 +1,13 @@
+<% @snapshot.operator_performance.each do |p| %>
+  <h4><%= p.operator %></h4>
+  <dl>
+    <dt>Total trains</dt>
+    <dd><%= p.total %></dd>
+    <dt>On time</dt>
+    <dd><%= p.on_time %></dd>
+    <dt>Late </dt>
+    <dd><%= p.late %></dd>
+    <dt>Cancelled</dt>
+    <dd><%= p.cancelled %></dd>
+  </dl>
+<% end %>
