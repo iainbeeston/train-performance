@@ -4,14 +4,20 @@ class OperatorPerformance
   attr_accessor :operator, :total, :on_time, :late, :cancelled
 
   def on_time_proportion
-    on_time / total.to_f
+    proportion(on_time)
   end
 
   def late_proportion
-    late / total.to_f
+    proportion(late)
   end
 
   def cancelled_proportion
-    cancelled / total.to_f
+    proportion(cancelled)
+  end
+
+  protected
+
+  def proportion(count)
+    total == 0 ? 0.0 : (count / total.to_f)
   end
 end
