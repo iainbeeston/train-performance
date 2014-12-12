@@ -48,3 +48,4 @@ gem 'rails-assets-normalize.css'
 gem 'puma'
 gem 'foreman'
 gem 'rails_12factor', group: :production
+gem 'rack-timeout'
