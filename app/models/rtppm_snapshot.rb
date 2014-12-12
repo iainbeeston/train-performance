@@ -11,7 +11,7 @@ class RtppmSnapshot < ActiveRecord::Base
   memoize :operator_performance
 
   def self.up_to_date?
-    most_recent.pluck(:imported_at).first >= 10.minutes.ago
+    most_recent.pluck(:imported_at).first >= 15.minutes.ago
   end
 
   def self.import
